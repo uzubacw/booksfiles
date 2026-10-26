@@ -1,39 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Estante — leitor de livros</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<HTML língua="pt-BR" tema de dados="escuro">
+<caboça>
+<meta conjunto de caracteres="UTF-8">
+<meta nome="janela de visualização" conteúdo="largura=largura do dispositivo, escala inicial=1,0, ajuste da janela de visualização=capa">
+<título>Estante — leitor de livros</título>
+<link relação="pré-conexão" href="https://fonts.googleapis.com">
+<link relação="pré-conexão" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Lexend:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Sora:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
-<style>
-:root{--sans:'Sora',system-ui,sans-serif;--pedge:color-mix(in srgb,var(--pbg,#f4ecd8) 80%,#000)}
-html[data-theme=dark]{--bg:#0f1218;--bg2:#1a1f29;--ink:#e8e3d3;--soft:#9a9585;--accent:#d4a72c;--accent2:#b04a4a;--onacc:#12151c;--panel:rgba(23,27,36,.9);--line:rgba(232,227,211,.13);--shadow:rgba(0,0,0,.7)}
-html[data-theme=light]{--bg:#ebe5d5;--bg2:#ddd5c0;--ink:#2b2a25;--soft:#6a6759;--accent:#2f5d46;--accent2:#8c3b3b;--onacc:#fff;--panel:rgba(251,248,241,.92);--line:rgba(43,42,37,.16);--shadow:rgba(43,42,37,.35)}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:radial-gradient(1100px 650px at 10% -10%,var(--bg2),transparent 60%),var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden;transition:background .4s,color .4s}
-button,select,input{font-family:inherit}
-button{cursor:pointer}
-.hide{display:none!important}
-.mut{color:var(--soft);font-size:12.5px}
-.btn{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:999px;font-size:13px;display:inline-flex;align-items:center;gap:6px;transition:.2s;backdrop-filter:blur(6px);flex:none}
-.btn:hover{border-color:var(--accent)}
-.btn.on,.btn.pri{background:var(--accent);color:var(--onacc);border-color:var(--accent);font-weight:600}
-.inp{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:10px;font-size:13px}
-select.inp{width:100%}
-input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:9px;background:var(--line);outline:none;width:100%}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:var(--accent);border:0}
-input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--accent);border:0}
+<roteiro fonte="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<roteiro fonte="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<estilo>
+:raiz{--sem:'Sora',sistema-ui,sem serifa;--pedge:color-mix(em srgb,var(--pbg,#f4ecd8) 80%,#000)}
+HTML[tema de dados=escuro]{--bg:#0f1218;--bg2:#1a1f29;--ink:#e8e3d3;--soft:#9a9585;--accent:#d4a72c;--accent2:#b04a4a;--onacc:#12151c;--panel:rgba(23,27,36,.9);--line:rgba(232,227,211,.13);--shadow:rgba(0,0,0,.7)}
+HTML[tema de dados=luz]{--bg:#ebe5d5;--bg2:#ddd5c0;--tinta:#2b2a25;--suave:#6a6759;--acento:#2f5d46;--acento2:#8c3b3b;--onacc:#fff;--painel:rgba(251.248.241.92);--linha:rgba(43.42.37.16);--sombra:rgba(43.42.37.35)}
+*{dimensionamento de caixa:caixa de fronteira}
+HTML,corpo{altura:100%}
+corpo{margem:0;fundo:gradiente radial(1100px 650px a 10% -10%,var(--bg2),transparente 60%),var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden;transition:background .4s,color .4s}
+botão,selecionar,entrada{família de fontes:herdar}
+botão{cursor:ponteiro}
+.esconder{exibir:nenhum!importante}
+.mut{cor:var(--suave);tamanho da fonte:12,5px}
+.btn{fundo:var(--painel);fronteira:1px sólido var(--line);color:var(--ink);padding:8px 14px;border-radius:999px;font-size:13px;display:inline-flex;align-items:center;gap:6px;transition:.2s;backdrop-filter:blur(6px);flex:none}
+.btn:parerar{cor da borda:var(--acento)}
+.btn.em,.btn.prêmio{fundo:var(--acento);cor:var(--onacc);border-color:var(--accent);font-weight:600}
+.inp{fundo:var(--painel);fronteira:1px sólido var(--line);color:var(--ink);padding:8px 12px;border-radius:10px;font-size:13px}
+selecionar.inp{largura:100%}
+entrada[tipo=faixa]{-aparência do webkit:nenhum;aparência:nenhum;altura:4px;raio-da-borda:9px;fundo:var(--linha);contorno:nenhum;largura:100%}
+entrada[tipo=faixa]::-webkit-slider-thumb{-aparência do webkit:none;largura:15px;altura:15px;raio-da-borda:50%;fundo:var(--acento);borda:0}
+entrada[tipo=faixa]::-moz-polegar-de-alcance{largura:15px;altura:15px;border-radius:50%;background:var(--accent);border:0}
 
-/* HOME */
-#home{min-height:100vh;padding:24px 18px 70px;display:flex;flex-direction:column;align-items:center}
-.home-top{width:min(980px,100%);display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:'Literata',serif;font-weight:600;font-size:20px}
-.hero{text-align:center;margin:34px 0 26px}
+/* GRANDE */
+#casa{altura média:100vh;enchimento:24px 18px 70px;exibir:flex;direção-flex:coluna;alinhar-itens:centro}
+.bancada de casa{largura:min(980px,100%);exibir:flexível;justificar-conteúdo:espaço-entre;alinhar-itens:centro}
+.logotipo{família de fontes:'Literata',serifa;peso da fonte:600;tamanho da fonte:20px}
+.herói{alinhamento de texto:centro;margem:34px 0 26px}
 .eyebrow{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);font-weight:600}
 .hero h1{font-family:'Literata',serif;font-size:clamp(32px,6vw,54px);margin:8px 0;line-height:1.08}
 .hero p{color:var(--soft);max-width:460px;margin:10px auto 0;font-size:14.5px;line-height:1.55}
